@@ -20,7 +20,7 @@ struct LinkedList
 	int count;
 };
 
-//Struct to make a list of nodes and count it
+//Struct for iterator to linkedlist
 struct Iterator
 {
 	struct node* cur;
@@ -44,6 +44,7 @@ struct LinkedList* initLinkedList()
 	return list;
 }
 
+//Initialize Iterator
 struct Iterator* initIterator(struct LinkedList* list)
 {
 	struct Iterator* iter = malloc(sizeof(struct Iterator));
