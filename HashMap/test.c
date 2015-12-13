@@ -1,4 +1,4 @@
-/*File name: main.c
+/*File name: test.c
  * Author Name: Baljot Singh
  * Description: Test HashMap if _setNewSize works
  *               */
