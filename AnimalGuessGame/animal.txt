@@ -1,0 +1,31 @@
+QDoes it live in water?
+QDeos it climb trees?
+QDoes it eat grass?
+QDoes it look like small tiger?
+ADog
+ACat
+QIt has long neck?
+AZebra
+AGiraffe
+QDoes it jump from tree to tree?
+QIt has stripes?
+ALion
+ATiger
+QDoes it live inside tree?
+AMonkey
+ASquirrel
+QIs it lazy sometimes?
+QIs it very good at hunting?
+QIs it bigger than Elephant
+ACute Fish
+AWhale
+QDoes it attack in group?
+AShark
+APiranha
+QDoes it has hard body?
+QDoes it jump?
+ASlug
+AFrog
+QIt has long tail?
+ATurtle
+ACrocodile
