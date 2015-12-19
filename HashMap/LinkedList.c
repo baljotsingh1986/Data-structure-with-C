@@ -163,4 +163,3 @@ void freeList(struct LinkedList* list)
 	free(list);
 	list = NULL;
 }
-
