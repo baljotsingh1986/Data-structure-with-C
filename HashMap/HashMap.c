@@ -37,7 +37,7 @@ struct HashMap* initHashMap()
 {
 	int i;
 	struct HashMap* map = NULL;
-	map = malloc(sizeof(struct HashMap));
+	map = (struct HashMap*)malloc(sizeof(struct HashMap));
 	map->table = malloc(sizeof(struct LinkedList*)*PRIME_ARR[0]);
 	map->size = PRIME_ARR[0];
 	map->links = 0;
@@ -56,7 +56,7 @@ struct HashMap* _initHashMap(int cap)
 {
 	int i;
 	struct HashMap* map = NULL;
-	map = malloc(sizeof(struct HashMap));
+	map = (struct HashMap*)malloc(sizeof(struct HashMap));
 	map->table = malloc(sizeof(struct LinkedList*)*cap);
 	map->size = cap;
 	map->links = 0;
