@@ -29,7 +29,7 @@ struct Iterator
 //Build a new Node
 struct node* _newNode()
 {
-	struct node* newNode  = malloc(sizeof(struct node));
+	struct node* newNode  = (struct node*)malloc(sizeof(struct node));
 	newNode->next = NULL;
 	return newNode;
 }
@@ -38,7 +38,7 @@ struct node* _newNode()
 struct LinkedList* initLinkedList()
 {
 	struct LinkedList* list = NULL;
-	list = malloc(sizeof(struct LinkedList));
+	list = (struct LinkedList*)malloc(sizeof(struct LinkedList));
 	list->head = _newNode();
 	list->count = 0;
 	return list;
@@ -47,7 +47,7 @@ struct LinkedList* initLinkedList()
 //Initialize Iterator
 struct Iterator* initIterator(struct LinkedList* list)
 {
-	struct Iterator* iter = malloc(sizeof(struct Iterator));
+	struct Iterator* iter = (struct Iterator*)malloc(sizeof(struct Iterator));
 	iter->cur = list->head;
 	return iter; 
 }
