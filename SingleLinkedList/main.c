@@ -7,7 +7,7 @@
 
 int main()
 {
-	struct LinkedList* linkedList = NULL;  /*Liked List*/
+	struct LinkedList* linkedList = NULL;  /*Linked List*/
 	struct Iterator* iter = NULL; /*Will be used as iterator*/
 	linkedList = initLinkedList(); /*Initialize linked list*/
 
