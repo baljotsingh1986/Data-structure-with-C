@@ -5,7 +5,7 @@
 
 #include "LinkedList.h"
 
-/*A strcut to define a node of linked list*/
+/*A struct to define a node of linked list*/
 struct node
 {
 	char val [50];
