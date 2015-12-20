@@ -7,9 +7,9 @@
 
 int main()
 {
-	struct LinkedList* linkedList = NULL;  //Liked List
-	struct Iterator* iter = NULL; //Will be used as iterator
-	linkedList = initLinkedList(); //Initialize linked list
+	struct LinkedList* linkedList = NULL;  /*Liked List*/
+	struct Iterator* iter = NULL; /*Will be used as iterator*/
+	linkedList = initLinkedList(); /*Initialize linked list*/
 
 	addLast("This is just before end", linkedList);
 	addFront("Hi List", linkedList);
@@ -21,24 +21,25 @@ int main()
 	addAfter("Add this after Hi List", "Hi List", linkedList);
 	addAfter("Add this End of all", "Add this at end", linkedList);
 	
+	printf("\nPrinting list after adding values\n\n");
 	printList(linkedList);
-	printf("Length: %d\n", getLength(linkedList));
+
+	printf("\nLength of initial list: %d\n", getLength(linkedList));
 
 	if(removeNode("Add this End of all", linkedList))
 	{
-		printf("\nEnd of all is removed\n\n");
+		printf("\nEnd of all is removed\n");
 	}
-	
-	printList(linkedList);
-	printf("Length: %d\n", getLength(linkedList));
 
 	if(removeNode("Hi List", linkedList))
 	{
-		printf("\nHi List is removed\n\n");
+		printf("\nHi List is removed\n");
 	}
 
+	printf("\nPrinting list after removing nodes\n\n");
 	printList(linkedList);
-	printf("Length: %d\n", getLength(linkedList));
+
+	printf("\nLength of list after removing nodes: %d\n", getLength(linkedList));
 
 	iter = initIterator(linkedList);
 	printf("\nPrinting list by iterator\n\n");
@@ -46,6 +47,10 @@ int main()
 	{
 		printf("val: %s\n", next(iter));
 	}
+
+	printf("\nPrinting after reversing the list.\n\n");
+	reverseList(linkedList);
+	printList(linkedList);
 
 	freeList(linkedList);
 
