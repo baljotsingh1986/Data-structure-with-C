@@ -5,7 +5,7 @@
 
 #include "LinkedList.h"
 
-//A strcut to define a node of linked list
+/*A strcut to define a node of linked list*/
 struct node
 {
 	char val [50];
@@ -13,20 +13,20 @@ struct node
 };
 
 
-//Struct to make a list of nodes and count it
+/*Struct to make a list of nodes and count it*/
 struct LinkedList
 {
 	struct node* head;
 	int count;
 };
 
-//Struct for iterator to linkedlist
+/*Struct for iterator to linkedlist*/
 struct Iterator
 {
 	struct node* cur;
 };
 
-//Build a new Node
+/*Helper function to Build a new Node*/
 struct node* _newNode()
 {
 	struct node* newNode  = (struct node*)malloc(sizeof(struct node));
@@ -34,7 +34,7 @@ struct node* _newNode()
 	return newNode;
 }
 
-//Initialize linked list
+/*Function to Initialize linked list*/
 struct LinkedList* initLinkedList()
 {
 	struct LinkedList* list = NULL;
@@ -44,7 +44,7 @@ struct LinkedList* initLinkedList()
 	return list;
 }
 
-//Initialize Iterator
+/*Function to Initialize Iterator*/
 struct Iterator* initIterator(struct LinkedList* list)
 {
 	struct Iterator* iter = (struct Iterator*)malloc(sizeof(struct Iterator));
@@ -52,7 +52,7 @@ struct Iterator* initIterator(struct LinkedList* list)
 	return iter; 
 }
 
-//Add new node at front
+/*Function to Add new node at front*/
 void addFront(const char* val, struct LinkedList* list)
 {
 	struct node* newNode = _newNode();
@@ -62,21 +62,21 @@ void addFront(const char* val, struct LinkedList* list)
 	list->count++;
 }
 
-//Add new node at end
+/*Function to Add new node at end*/
 void addLast(const char* val, struct LinkedList* list)
 {
 	struct node* newNode = _newNode();
 	strcpy(newNode->val, val);
 	struct node* nextNode = list->head;
-       while(nextNode->next)
-       {
+       	while(nextNode->next)
+       	{
 	       nextNode = nextNode->next;
-       }	
-       nextNode->next = newNode;
-       list->count++;
+       	}	
+       	nextNode->next = newNode;
+       	list->count++;
 }
 
-//Add new node before a given value
+/*Function to Add new node before a given value*/
 int addBefore(const char* newVal, const char* existingVal, struct LinkedList* list)
 {
 	struct node* newNode = _newNode();
@@ -97,7 +97,7 @@ int addBefore(const char* newVal, const char* existingVal, struct LinkedList* li
        return 0; 
 }
 
-//Add new node ater a given value
+/*Function to Add new node ater a given value*/
 int addAfter(const char* newVal, const char* existingVal, struct LinkedList* list)
 {
 	struct node* newNode = _newNode();
@@ -118,7 +118,7 @@ int addAfter(const char* newVal, const char* existingVal, struct LinkedList* lis
        	return 0; 
 }
 
-//Remove node 
+/*Function to Remove node for a given value*/ 
 int removeNode(const char* val, struct LinkedList* list)
 {
 	struct node* nextNode = list->head->next;
@@ -139,13 +139,13 @@ int removeNode(const char* val, struct LinkedList* list)
        	return 0;
 }
 
-//get length of list
+/*Function to get length of list*/
 int getLength(struct LinkedList* list)
 {
 	return list->count;
 }
 
-//Iteration over linked list
+/*Function for Iteration over linked list*/
 int hasNext(struct Iterator* iter)
 {
 	if(iter->cur->next == NULL)
@@ -156,14 +156,31 @@ int hasNext(struct Iterator* iter)
 	return 1;
 }
 
-//Return the value and move iterator to next
+/*Function to Return the value and move iterator to next*/
 char* next(struct Iterator* iter)
 {
 	iter->cur = iter->cur->next;
 	return iter->cur->val;
 }
 
-//Print List
+/*Function to reverse List*/
+void reverseList(struct LinkedList* list)
+{
+	struct node* nextNode = list->head->next;
+	struct node* reversedList = NULL;
+	struct node* temp = NULL;
+	while(nextNode)
+	{
+		temp = nextNode->next;
+		nextNode->next = reversedList;
+		reversedList = nextNode;
+		nextNode = temp;
+	}
+	list->head->next = reversedList;
+
+}
+
+/*Function to Print List*/
 void printList(struct LinkedList* list)
 {
 	struct node* nextNode = list->head->next;
@@ -175,7 +192,7 @@ void printList(struct LinkedList* list)
 
 }
 
-//free List
+/*Function to free List*/
 void freeList(struct LinkedList* list)
 {
 	struct node* nextNode = list->head->next;
